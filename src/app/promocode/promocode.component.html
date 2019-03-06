@@ -1,0 +1,227 @@
+
+
+
+  <div id="wrapper">
+
+    
+    <!-- Sidebar -->
+ <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+     <!-- Sidebar - Brand -->
+     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <div class="sidebar-brand-icon rotate-n-15">
+        <i class="fas fa-laugh-wink"></i>
+      </div>
+      <div class="sidebar-brand-text mx-3">Water H2O Admin <sup>2</sup></div>
+    </a>
+
+    <hr class="sidebar-divider my-0">
+
+    <hr class="sidebar-divider">
+
+    <hr class="sidebar-divider">
+
+    <div class="sidebar-heading">
+      Admin Chart
+    </div>
+
+
+        
+         
+     <li class="nav-item">
+      <a class="nav-link" routerLink="/addcard">Add_To_Product
+
+        </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/orderhistory">View_Order_History
+        
+        </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/Userdetail">Userdetail
+        
+        </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/promocode">Add_Promo_Code
+       
+        </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/ViewPromocoded">View_Promo_Code
+  
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" (click)="logout()">Logout
+          <i class="fas fa-fw fa-table"></i>
+          </a>
+      </li>
+
+
+
+  
+     <hr class="sidebar-divider d-none d-md-block">
+
+   </ul>
+
+   <div id="content-wrapper" class="d-flex flex-column">
+
+     <!-- Main Content -->
+     <div id="content">
+
+       <!-- Topbar -->
+       <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+         <ul class="navbar-nav ml-auto">
+           <li class="nav-item dropdown no-arrow mx-1">
+             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fas fa-bell fa-fw"></i>
+ 
+               <span class="badge badge-danger badge-counter">3+</span>
+             </a>
+   
+             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+               <h6 class="dropdown-header">
+                 Alerts Center
+               </h6>
+               <a class="dropdown-item d-flex align-items-center" href="#">
+                 <div class="mr-3">
+                   <div class="icon-circle bg-primary">
+                     <i class="fas fa-file-alt text-white"></i>
+                   </div>
+                 </div>
+                 <div>
+                   <div class="small text-gray-500">December 12, 2019</div>
+                   <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                 </div>
+               </a>
+               <a class="dropdown-item d-flex align-items-center" href="#">
+                 <div class="mr-3">
+                   <div class="icon-circle bg-success">
+                     <i class="fas fa-donate text-white"></i>
+                   </div>
+                 </div>
+                 <div>
+                   <div class="small text-gray-500">December 7, 2019</div>
+                   $290.29 has been deposited into your account!
+                 </div>
+               </a>
+               <a class="dropdown-item d-flex align-items-center" href="#">
+                 <div class="mr-3">
+                   <div class="icon-circle bg-warning">
+                     <i class="fas fa-exclamation-triangle text-white"></i>
+                   </div>
+                 </div>
+                 <div>
+                   <div class="small text-gray-500">December 2, 2019</div>
+                   Spending Alert: We've noticed unusually high spending for your account.
+                 </div>
+               </a>
+               <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+             </div>
+           </li>
+
+
+           <div class="topbar-divider d-none d-sm-block"></div>
+
+           <!-- Nav Item - User Information -->
+           <li class="nav-item dropdown no-arrow">
+             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              
+               <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+             </a>
+            
+           </li>
+
+         </ul>
+
+       </nav>
+     
+  
+
+
+       <form action="/action_page.php">
+         <div class="container">
+           <h1>Add Your Promo_Code</h1>
+           <p>Please fill </p>
+           <hr>
+ 
+           <form class="newForm" #newForm="ngForm" (ngSubmit)= "onSubmit()"  >
+             <div class="login-form-head">
+                 <h4>Add Your Promo_Code</h4>
+                 <p>Hello there, Add Promo_Code in and start managing your Admin Template</p>
+             </div>
+ 
+             <div class="login-form-body">
+                 <div class="form-gp">
+                     <label for="email"><b>Promo_Code____</b></label>
+                     <input type="text" required #pcode="ngModel" class="form-control" name="pcode" placeholder="Promo_Code"  [(ngModel)]="userModel.pcode">
+                    
+                 </div>
+ 
+                 <div class="form-gp">
+                     <label for="email"><b> Promo_Code_Discount</b></label>
+                     <input type="text" required #pcodedis="ngModel" class="form-control" name="pcodedis"  placeholder="Promo_Code_Discount"   [(ngModel)]="userModel.pcodedis">
+                     
+                 </div>
+ 
+                 <div class="form-gp">
+                     <label for="email"><b>Promo_Code_Start_Date</b></label>
+                     <input type="date" required #pcsdate="ngModel" class="form-control" name="pcsdate" placeholder="Promo_Code_Start_Date"   [(ngModel)]="userModel.pcsdate">
+                     
+                 </div>
+ 
+                 <div class="form-gp">
+                     <label for="email"><b>Promo_Code_End_Date</b></label>
+                     <input type="date" required #pcedate="ngModel" class="form-control" name="pcedate" placeholder="Promo_Code_End_Date"  [(ngModel)]="userModel.pcedate">
+                    
+                 </div>
+ 
+                
+                 <div class="submit-btn-area">
+                     <button type="submit"  class="btn btn-primary center-block"  [disabled]="newForm.form.invalid">Submit</button>
+                 </div>
+             </div>
+         </form>
+         </div>
+        </form>
+
+
+
+   </div>
+
+ </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

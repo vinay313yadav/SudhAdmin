@@ -1,0 +1,69 @@
+
+  <div class="container">
+
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+      <div class="col-xl-10 col-lg-12 col-md-9">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+          <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+          
+              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6">
+                <div class="p-5">
+                  <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Welcome This is Admin_Panel!</h1>
+                  </div>
+
+                  <div class="container">
+                    <div class="login-box ptb--100">
+                        <form class="newForm" #newForm="ngForm" (ngSubmit)= "onSubmit()"  >
+                            <div class="login-form-head">
+                                <h4>Log in Page</h4>
+                                <p></p>
+                            </div>
+          
+          
+                            <div class="login-form-body">
+
+                                <div class="form-gp">
+                                    <input type="text" required #username="ngModel" class="form-control" name="username" placeholder="Username"  [(ngModel)]="userModel.username" required>
+                                    <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                                    class="alert alert-danger">
+                                  <div *ngIf="username.errors.required">
+                                  Username is required.
+                                  </div>
+                                </div>
+                                </div>
+          
+                                <div class="form-gp">
+                                    <input type="password" required #password="ngModel" class="form-control" name="password" placeholder="password"   [(ngModel)]="userModel.password" required>
+                                    <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                                    class="alert alert-danger">
+                                  <div *ngIf="password.errors.required">
+                                  password is required.
+                                  </div>
+                                </div>
+                                </div>
+          
+                                <div class="submit-btn-area">
+                                    <!-- <button type="submit"  class="btn btn-primary center-block" >Submit</button> -->
+                                    <button type="submit" class="btn btn-primary center-block" [disabled]="newForm.form.invalid">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

@@ -1,0 +1,43 @@
+<div class="login-area login-s2">
+    <div class="container">
+
+
+        <div class="container">
+            <div class="login-box ptb--100">
+                <form class="newForm" #newForm="ngForm" (ngSubmit)= "onSubmit()"  >
+                    <div class="login-form-head">
+                        <h4>Add Your Product</h4>
+                        <p>Hello there, Add Product in and start managing your Admin Template</p>
+                    </div>
+
+
+                    <div class="login-form-body">
+                        <div class="form-gp">
+                            <input type="text" required #name="ngModel" class="form-control" name="name" placeholder="Name"  [(ngModel)]="userModel.name">
+                        </div>
+
+                        <div class="form-gp">
+                            <input type="text" required #price="ngModel" class="form-control" name="price"  placeholder="Price"   [(ngModel)]="userModel.price">
+                        </div>
+
+                        <div class="form-gp">
+                            <input type="text" required #catagory="ngModel" class="form-control" name="catagory" placeholder="Catagory"   [(ngModel)]="userModel.catagory">
+                        </div>
+
+                        <div class="form-gp">
+                            <input type="text" required #discount="ngModel" class="form-control" name="discount" placeholder="Discount"  [(ngModel)]="userModel.discount">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="avatar">Add your Product</label>
+                            <input type="file"  id="avatar" #fileupload [(ngModel)]="myFile" name="myFile" (change)="onFileSelected($event)" [(ngModel)]="userModel.avatar">
+                          </div>
+                        <div class="submit-btn-area">
+                            <button type="submit"  class="btn btn-primary center-block" >Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
